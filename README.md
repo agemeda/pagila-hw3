@@ -32,7 +32,7 @@
     ```
     Obvserve that this data is not very realistic.
     In the realworld, every store would need more than 1 staff member.
-    Also, since the dataset has customers from many different countries,
+     since the dataset has customers from many different countries,
     it should probably have stores in many different countries as well.
 
     Fortunately, the pagila maintainers have also realized this problem and updated the dataset. 
