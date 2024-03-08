@@ -7,18 +7,15 @@
 
 SELECT customer_id, first_name, last_name
 FROM (
-    SELECT customer_id, first_name, last_name, inventory_id, RANK() OVER (
-        PARTITION BY customer_id 
-        ORDER BY rental_date DESC
-    )
-    FROM customer
-    JOIN rental USING (customer_id)
-) AS r
+SELECT customer_id, first_name, last_name, inventory_id, RANK() OVER (PARTITION BY customer_id ORDER BY rental_date DESC) as orderr
+FROM customer
+JOIN rental USING (customer_id)
+) a
 JOIN inventory USING (inventory_id)
 JOIN film USING (film_id)
 JOIN film_category USING (film_id)
 JOIN category USING (category_id)
-WHERE rank <= 5
-GROUP BY 1,2,3
-HAVING sum(CASE WHEN name = 'Action' THEN 1 ELSE 0 END) >= 4
+WHERE orderr <= 5
+GROUP BY customer_id, first_name, last_name
+HAVING sum(case when name = 'Action' then 1 else 0 end) >= 4
 ORDER BY customer_id;
