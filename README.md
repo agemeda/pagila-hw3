@@ -1,5 +1,5 @@
 # pagila-hw3
-[![](https://github.com/mikeizbicki/pagila-hw3/workflows/tests/badge.svg)](https://github.com/mikeizbicki/pagila-hw3/actions?query=workflow%3Atests)
+[![](https://github.com/agemeda/pagila-hw3/workflows/tests/badge.svg)](https://github.com/agemeda/pagila-hw3/actions?query=workflow%3Atests)
 
 ## Tasks
 
@@ -12,7 +12,7 @@
     $ docker-compose exec pg psql
     ```
 
-1. We will now observe some problems with the pagila dataset,
+1. We will now observe some problems with the pagila dataset,:
     and upgrade the dataset to fix these problems.
 
     Count the number of staff members and stores in this dataset.
